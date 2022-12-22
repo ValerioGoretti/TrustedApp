@@ -99,7 +99,10 @@ SGX_FILE* access_protected_resource(const char* pub_k, const char* encr_pubk,int
     ocall_print("----");
     ocall_print("ciao");
     ocall_print("----");
-    return NULL;
+	const char* filename = "SGX_File_Protection_System.txt";
+	const char* mode = "w+";
+	SGX_FILE* a = sgx_fopen_auto_key(filename, mode);
+    return a;
 }
 
 
